@@ -21,6 +21,7 @@ const Circle = forwardRef<
     </div>
   );
 });
+export { AnimatedBeam } from './components/magicui/animated-beam.tsx';
 
 export function AnimatedBeamDemo() {
   const containerRef = useRef<HTMLDivElement>(null);
