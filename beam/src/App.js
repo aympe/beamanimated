@@ -1,4 +1,4 @@
-import { AnimatedBeam } from "../../components/magicui/animated-beam";
+import { AnimatedBeam } from "@/components/magicui/animated-beam";
 
 export default function AnimatedBeamDemo() {
   const containerRef = useRef<HTMLDivElement>(null);
