@@ -1,7 +1,7 @@
 "use client";
 
 import { Icons } from "C:\Users\aymer\beamanimated\beam\src\components\icons";
-import { cn } from "C:\Users\aymer\beamanimated\beam\src\lib\utils.ts";
+import { cn } from "./lib/utils";
 import { AnimatedBeam } from "C:\Users\aymer\beamanimated\beam\src\components\magicui\animated-beam.tsx";
 import React, { forwardRef, useRef } from "react";
 
