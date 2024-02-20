@@ -1,113 +1,27 @@
-"use client";
+import { AnimatedBeam } from "@/components/magicui/animated-beam";
 
-import { Icons } from "./src/components/icons";
-import { cn } from "./src/lib/utils.ts";
-import { AnimatedBeam } from "./src/components/magicui/animated-beam.tsx";
-import React, { forwardRef, useRef } from "react";
-
-const Circle = forwardRef<
-  HTMLDivElement,
-  { className?: string; children?: React.ReactNode }
->(({ className, children }, ref) => {
-  return (
-    <div
-      ref={ref}
-      className={cn(
-        "z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
-        className,
-      )}
-    >
-      {children}
-    </div>
-  );
-});
-export { AnimatedBeam } from './components/magicui/animated-beam.tsx';
-
-export function AnimatedBeamDemo() {
+export default function AnimatedBeamDemo() {
   const containerRef = useRef<HTMLDivElement>(null);
   const div1Ref = useRef<HTMLDivElement>(null);
   const div2Ref = useRef<HTMLDivElement>(null);
-  const div3Ref = useRef<HTMLDivElement>(null);
-  const div4Ref = useRef<HTMLDivElement>(null);
-  const div5Ref = useRef<HTMLDivElement>(null);
-  const div6Ref = useRef<HTMLDivElement>(null);
-  const div7Ref = useRef<HTMLDivElement>(null);
 
   return (
     <div
-      className="relative flex w-full max-w-[500px] items-center justify-center overflow-hidden rounded-lg border bg-background p-10 md:shadow-2xl"
       ref={containerRef}
+      className="relative flex h-full w-full justify-between"
     >
-      <div className="flex h-full w-full flex-col items-stretch justify-between gap-10">
-        <div className="flex flex-row items-center justify-between">
-          <Circle ref={div1Ref}>
-            <Icons.googleDrive className="h-6 w-6" />
-          </Circle>
-          <Circle ref={div5Ref}>
-            <Icons.googleDocs className="h-6 w-6" />
-          </Circle>
-        </div>
-        <div className="flex flex-row items-center justify-between">
-          <Circle ref={div2Ref}>
-            <Icons.notion className="h-6 w-6" />
-          </Circle>
-          <Circle ref={div4Ref} className="h-16 w-16">
-            <Icons.openai className="h-6 w-6" />
-          </Circle>
-          <Circle ref={div6Ref}>
-            <Icons.zapier className="h-6 w-6" />
-          </Circle>
-        </div>
-        <div className="flex flex-row items-center justify-between">
-          <Circle ref={div3Ref}>
-            <Icons.whatsapp className="h-6 w-6" />
-          </Circle>
-          <Circle ref={div7Ref}>
-            <Icons.messenger className="h-6 w-6" />
-          </Circle>
-        </div>
-      </div>
-
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={div1Ref}
-        toRef={div4Ref}
-        curvature={-75}
-        endYOffset={-10}
+        toRef={div2Ref}
       />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div2Ref}
-        toRef={div4Ref}
+      <div
+        ref={div1Ref}
+        className="z-10 h-10 w-10 rounded-full bg-white shadow-xl"
       />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div3Ref}
-        toRef={div4Ref}
-        curvature={75}
-        endYOffset={10}
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div5Ref}
-        toRef={div4Ref}
-        curvature={-75}
-        reverse
-        endYOffset={-10}
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div6Ref}
-        toRef={div4Ref}
-        reverse
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={div7Ref}
-        toRef={div4Ref}
-        curvature={75}
-        reverse
-        endYOffset={10}
+      <div
+        ref={div2Ref}
+        className="z-10 h-10 w-10 rounded-full bg-white shadow-xl"
       />
     </div>
   );
