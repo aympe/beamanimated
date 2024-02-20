@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { AnimatedBeam } from "@/components/magicui/animated-beam";
 
-function App() {
+export default function AnimatedBeamDemo() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const div1Ref = useRef<HTMLDivElement>(null);
+  const div2Ref = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      ref={containerRef}
+      className="relative flex h-full w-full justify-between"
+    >
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={div1Ref}
+        toRef={div2Ref}
+      />
+      <div
+        ref={div1Ref}
+        className="z-10 h-10 w-10 rounded-full bg-white shadow-xl"
+      />
+      <div
+        ref={div2Ref}
+        className="z-10 h-10 w-10 rounded-full bg-white shadow-xl"
+      />
     </div>
   );
 }
-
-export default App;
