@@ -1,7 +1,7 @@
 "use client";
 
-import { Icons } from "src/components/icons";
-import { cn } from "src/lib/utils";
+import { Icons } from "./icons";
+import { cn } from "../../lib/utils";
 import { AnimatedBeam } from "src/components/magicui/animated-beam";
 import React, { forwardRef, useRef } from "react";
 
